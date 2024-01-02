@@ -48,3 +48,30 @@ a.nav-link {
     color: var(--black);
 }
 
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: var(--border);
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+}
+
+.active {
+    border-bottom: 2px solid var(--blue);
+    font-weight: 500;
+}
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 5px;
+}

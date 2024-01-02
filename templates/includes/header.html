@@ -1,4 +1,7 @@
 {% load static %}
+
+<header>
+    {% with request.resolver_match.url_name as url_name %}
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="{% static '/images/padded_logo.png' %}" alt=""></a>
@@ -8,7 +11,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link {% if url_name == 'home' %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Recipes</a>
@@ -16,6 +19,20 @@
           <li class="nav-item">
             <a class="nav-link" href="#">New</a>
           </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'accounts_logout' %} active {% endif %}" href="/accounts/logout/">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'accounts_login' %} active {% endif %}" href="/accounts/login/">Login</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link {% if url_name == 'accounts_signup' %} active {% endif %}" href="/accounts/signup/">Register</a>
+          </li>
+
+          {% endif %}
           
         </ul>
         
@@ -26,3 +43,5 @@
       </div>
     </div>
   </nav>
+  {% endwith %}
+</header>
