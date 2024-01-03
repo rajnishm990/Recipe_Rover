@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center">
+    <h1> 403 - Unauthorized </h1>
+    <p> You Are Not Allowed to Perform this Action </p>
+    <a href="{% url 'home' %}" class="btn btn-primary w-25">Home</a>
+
+</div>
+{% endblock %}
