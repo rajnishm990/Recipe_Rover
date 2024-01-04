@@ -49,6 +49,7 @@ INSTALLED_APPS = [
         #Apps
     'home',
     'recipes',
+    
 
     #other
     'crispy_forms',
@@ -172,6 +173,7 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
