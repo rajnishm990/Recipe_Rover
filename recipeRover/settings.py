@@ -130,12 +130,8 @@ WSGI_APPLICATION = 'recipeRover.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '*aFE45eg3CGFg4f16eGe2AG453-D1F3F',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '12297',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
