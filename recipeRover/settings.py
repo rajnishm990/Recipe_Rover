@@ -132,8 +132,8 @@ DATABASES = { 'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2',
 'HOST': "viaduct.proxy.rlwy.net", 
 'NAME': os.environ.get("NAME"), 
 'USER': os.environ.get("USER"), 
-'PASSWORD':"a2F*F4g25dgC-g4dG5gGfab-55gc12AC", 
-'PORT':"41975", } 
+'PASSWORD':os.environ.get("PASSWORD"), 
+'PORT':os.environ.get("PORT"), } 
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -181,10 +181,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
 #cloudinary settings
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-CLOUDINARY_URL = 'cloudinary://146275661654238:EsOGpuwkTLqgxCZLJjso1Tk3Rag@dgt5ult5n'
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 CLOUDINARY_STORAGE = { 
     'CLOUD_NAME':os.environ.get('CLOUD_NAME'), 
-    'API_KEY':"146275661654238",
+    'API_KEY':os.environ.get("API_KEY"),
     'API_SECRET':os.environ.get('API_SECRET'),
  }
 
