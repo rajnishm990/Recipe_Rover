@@ -133,7 +133,7 @@ DATABASES = { 'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2',
 'NAME': os.environ.get("NAME"), 
 'USER': os.environ.get("USER"), 
 'PASSWORD':os.environ.get("PASSWORD"), 
-'PORT':os.environ.get("PORT"), } 
+'PORT':"41975", } 
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -184,7 +184,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 CLOUDINARY_STORAGE = { 
     'CLOUD_NAME':os.environ.get('CLOUD_NAME'), 
-    'API_KEY':os.environ.get('API_KEY'),
+    'API_KEY':"146275661654238",
     'API_SECRET':os.environ.get('API_SECRET'),
  }
 
