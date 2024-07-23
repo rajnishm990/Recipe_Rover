@@ -128,12 +128,21 @@ WSGI_APPLICATION = 'recipeRover.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = { 'default': { 'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-'HOST': "viaduct.proxy.rlwy.net", 
-'NAME': os.environ.get("NAME"), 
-'USER': os.environ.get("USER"), 
-'PASSWORD':os.environ.get("PASSWORD"), 
-'PORT':os.environ.get("PORT"), } 
+
+
+# Replace the DATABASES section of your settings.py with this
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': getenv('PGDATABASE'),
+    'USER': getenv('PGUSER'),
+    'PASSWORD': getenv('PGPASSWORD'),
+    'HOST': getenv('PGHOST'),
+    'PORT': getenv('PGPORT', 5432),
+    'OPTIONS': {
+      'sslmode': 'require',
+    },
+  }
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
